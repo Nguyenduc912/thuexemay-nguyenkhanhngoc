@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Khách Hàng</title>
+    <link rel="icon" href="img/logo3.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            flex: 1;
+        }
+
+        footer {
+            flex-shrink: 0;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #register-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .header-orange {
+            position: relative; /* Đặt vị trí của header là relative */
+            z-index: 1; /* Đặt z-index của header là 1 */
+        }
+
+        #customer-info {
+            margin-top: 90px; /* Thêm margin-top để dịch chuyển form icon xuống dưới */
+            padding: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Include header here -->
+    <header class="header-orange text-white text-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 col-4">
+                    <img src="img/logo1.jpg" alt="Logo" class="img-fluid logo">
+                </div>
+                <div class="col-md-10 col-8">
+                    <h1 class="h3 h-md-1">Dịch Vụ Thuê Xe Máy NGỌC VINH</h1>
+                    <p>Thuê xe máy nhanh chóng, tiện lợi và giá rẻ</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center" id="customer-info">
+                <h2>Lựa Chọn Xe</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="xeso.html">
+                            <i class="fas fa-motorcycle fa-5x"></i>
+                        </a>
+                        <p>Xe Máy</p>
+                    </div>
+                    <!-- Thêm biểu tượng xe tay ga -->
+                    <div class="col-md-6">
+                        <a href="xetayga.html">
+                            <i class="fas fa-motorcycle fa-5x"></i>
+                        </a>
+                        <p>Xe Tay Ga</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-light text-center py-3">
+        <p>&copy; 2023 Dịch Vụ Thuê Xe Máy Cần Thơ. All rights reserved.</p>
+    </footer>
+    
+
+</body>
+
+</html>

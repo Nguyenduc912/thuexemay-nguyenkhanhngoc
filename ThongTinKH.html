@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Khách Hàng</title>
+    <link rel="icon" href="img/logo3.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            flex: 1;
+        }
+
+        footer {
+            flex-shrink: 0;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #register-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        #customer-info {
+            margin-top: 100px; /* Khoảng cách giữa header và form */
+            padding: 20px; /* Khoảng cách nội dung bên trong form */
+            background-color: #f8f9fa; /* Màu nền của form */
+            border: 1px solid #ced4da; /* Viền của form */
+            border-radius: 5px; /* Bo góc của form */
+        }
+        .header-orange {
+            padding-top: 20px; /* Thêm padding top cho header để tạo khoảng cách */
+            margin-bottom: 20px; /* Thêm margin bottom cho header */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Include header here -->
+    <header class="header-orange text-white text-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 col-4">
+                    <img src="img/logo1.jpg" alt="Logo" class="img-fluid logo">
+                </div>
+                <div class="col-md-10 col-8">
+                    <h1 class="h3 h-md-1">Dịch Vụ Thuê Xe Máy NGỌC VINH</h1>
+                    <p>Thuê xe máy nhanh chóng, tiện lợi và giá rẻ</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content for customer information -->
+    <div class="container mt-5">
+        <div id="customer-info" class="alert alert-info">
+            <h4>Thông Tin Khách Hàng</h4>
+            <p><strong>Họ và Tên:</strong> <span id="display-name"></span></p>
+            <p><strong>Số Điện Thoại:</strong> <span id="display-phone"></span></p>
+            <p><strong>Ngày Thuê:</strong> <span id="display-date"></span></p>
+            <p><strong>Gói Thuê:</strong> <span id="display-package"></span></p>
+        </div>
+
+        <!-- Confirm button to go back to trangchu.html -->
+        <a href="trangchu.html" class="btn btn-primary mt-3">Xác Nhận</a>
+    </div>
+
+    <!-- Include footer here -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Dịch Vụ Thuê Xe Máy. Mọi quyền được bảo lưu.</p>
+        <p>Liên hệ: info@thuexemay.com | 0123 456 789</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Load customer data from localStorage
+            const name = localStorage.getItem('bookingName');
+            const phone = localStorage.getItem('bookingPhone');
+            const date = localStorage.getItem('bookingDate');
+            const package = localStorage.getItem('bookingPackage');
+
+            // Display customer data
+            $('#display-name').text(name);
+            $('#display-phone').text(phone);
+            $('#display-date').text(date);
+            $('#display-package').text(package);
+
+            // Clear localStorage when user confirms and goes back
+            $('a.btn-primary').click(function () {
+                localStorage.removeItem('bookingName');
+                localStorage.removeItem('bookingPhone');
+                localStorage.removeItem('bookingDate');
+                localStorage.removeItem('bookingPackage');
+            });
+        });
+    </script>
+</body>
+
+</html>
