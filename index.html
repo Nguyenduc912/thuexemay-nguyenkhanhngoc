@@ -20,8 +20,9 @@
         }
 
         .navbar-brand img {
-            height: 40px;
+            height: 30px; /* Decrease logo size */
         }
+
         .navbar {
             background-color: #343a40; /* Dark gray background */
         }
@@ -29,6 +30,7 @@
         .navbar-brand {
             display: flex;
             align-items: center;
+            flex-wrap: wrap; /* Allow wrapping */
         }
 
         .navbar-brand img {
@@ -37,7 +39,7 @@
 
         .brand-text {
             font-family: 'Arial', sans-serif; /* Change to your preferred font */
-            font-size: 1.5rem; /* Adjust the size as needed */
+            font-size: 1.2rem; /* Adjust the size for smaller screens */
             font-weight: bold; /* Make the text bold */
             color: #f8d210; /* Bright yellow color for contrast */
             text-transform: uppercase; /* Make the text uppercase */
@@ -47,7 +49,6 @@
         .navbar-brand:hover .brand-text {
             color: #ffdd57; /* Lighter yellow on hover */
         }
-
 
         .hero-section {
             background: url('img/hero-bg.jpg') no-repeat center center;
