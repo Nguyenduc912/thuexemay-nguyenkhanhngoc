@@ -64,3 +64,50 @@ $(document).ready(function () {
 function toggleService() {
     window.location.href = "DichVu.html";
 }
+
+// //////
+        $(document).ready(function () {
+            $('#back-to-top').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            });
+
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 300) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+
+            $('a.nav-link').click(function (event) {
+                event.preventDefault();
+                var target = $(this).attr('href');
+                if (target.startsWith("#")) {
+                    $('html, body').animate({
+                        scrollTop: $(target).offset().top
+                    }, 'slow');
+                } else {
+                    window.location.href = target;
+                }
+            });
+
+            // Initialize and add the map
+            function initMap() {
+                // The location
+                const location = { lat: 10.0452, lng: 105.7469 };
+                // The map, centered at the location
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 15,
+                    center: location,
+                });
+                // The marker, positioned at the location
+                const marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                });
+            }
+
+            // Load the map after the page has completely loaded
+            window.initMap = initMap;
+        });
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
